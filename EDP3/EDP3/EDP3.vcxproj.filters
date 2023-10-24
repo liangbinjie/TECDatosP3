@@ -18,10 +18,36 @@
     <ClCompile Include="ventanaPrincipal.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Paises.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ventanaPrincipal.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Paises.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Ciudades.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="Clientes.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="Menu.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="Paises.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="Productos.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="Restaurantes.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
   </ItemGroup>
 </Project>

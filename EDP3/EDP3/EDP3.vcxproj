@@ -124,9 +124,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Paises.cpp" />
     <ClCompile Include="ventanaPrincipal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Paises.h" />
     <ClInclude Include="ventanaPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -135,6 +137,14 @@
     <EmbeddedResource Include="ventanaPrincipal.resx">
       <DependentUpon>ventanaPrincipal.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Ciudades.txt" />
+    <Text Include="Clientes.txt" />
+    <Text Include="Menu.txt" />
+    <Text Include="Paises.txt" />
+    <Text Include="Productos.txt" />
+    <Text Include="Restaurantes.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
