@@ -124,10 +124,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Ciudad.cpp" />
     <ClCompile Include="Paises.cpp" />
     <ClCompile Include="ventanaPrincipal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ciudad.h" />
     <ClInclude Include="Paises.h" />
     <ClInclude Include="ventanaPrincipal.h">
       <FileType>CppForm</FileType>
