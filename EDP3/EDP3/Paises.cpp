@@ -20,7 +20,8 @@ ArbolPais::ArbolPais() {
 }
 
 string ArbolPais::hola() {
-	return "hola";
+	preorden();
+	return raiz->nombre;
 }
 
 void ArbolPais::insertarAux(NodoPais* r, int id, string nombre) {
@@ -161,7 +162,7 @@ void ArbolPais::preorden() {
 
 
 void ArbolPais::cargarPais() {
-	ifstream archivo("Archivos/Paises.txt");
+	ifstream archivo("Paises.txt");
 	string line;
 
 	while (getline(archivo, line)) {

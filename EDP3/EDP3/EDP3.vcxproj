@@ -114,6 +114,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -124,21 +126,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Admins.cpp" />
+    <ClCompile Include="Ciudades.cpp" />
+    <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="InsertPais.cpp" />
     <ClCompile Include="Paises.cpp" />
     <ClCompile Include="ventanaPrincipal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Admins.h" />
+    <ClInclude Include="Ciudades.h" />
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="InsertPais.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Paises.h" />
     <ClInclude Include="ventanaPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="InsertPais.resx">
+      <DependentUpon>InsertPais.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ventanaPrincipal.resx">
       <DependentUpon>ventanaPrincipal.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Administradores.txt" />
     <Text Include="Ciudades.txt" />
     <Text Include="Clientes.txt" />
     <Text Include="Menu.txt" />

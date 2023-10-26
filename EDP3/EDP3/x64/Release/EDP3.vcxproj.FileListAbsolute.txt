@@ -1,0 +1,3 @@
+C:\GitHub\Projects\Datos\TECDatosP3\EDP3\EDP3\x64\Release\EDP3.vcxproj.AssemblyReference.cache
+C:\GitHub\Projects\Datos\TECDatosP3\EDP3\EDP3\x64\Release\EDP3.ventanaPrincipal.resources
+C:\GitHub\Projects\Datos\TECDatosP3\EDP3\EDP3\x64\Release\EDP3.vcxproj.GenerateResource.cache
