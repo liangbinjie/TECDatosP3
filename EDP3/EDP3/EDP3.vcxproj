@@ -125,17 +125,39 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ciudad.cpp" />
+    <ClCompile Include="InsertarCiudad.cpp" />
+    <ClCompile Include="InsertarPais.cpp" />
+    <ClCompile Include="InsertarRestaurante.cpp" />
+    <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Paises.cpp" />
     <ClCompile Include="ventanaPrincipal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ciudad.h" />
+    <ClInclude Include="InsertarCiudad.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="InsertarPais.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="InsertarRestaurante.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Paises.h" />
     <ClInclude Include="ventanaPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="InsertarPais.resx">
+      <DependentUpon>InsertarPais.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertarRestaurante.resx">
+      <DependentUpon>InsertarRestaurante.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ventanaPrincipal.resx">
       <DependentUpon>ventanaPrincipal.h</DependentUpon>
     </EmbeddedResource>

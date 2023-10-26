@@ -1,0 +1,4 @@
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\x64\Release\EDP3.vcxproj.AssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\x64\Release\EDP3.InsertarPais.resources
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\x64\Release\EDP3.ventanaPrincipal.resources
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\x64\Release\EDP3.vcxproj.GenerateResource.cache

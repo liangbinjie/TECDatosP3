@@ -1,3 +1,11 @@
-﻿  ventanaPrincipal.cpp
+﻿  InsertarCiudad.cpp
+  InsertarPais.cpp
+  InsertarRestaurante.cpp
+  MyForm.cpp
+  ventanaPrincipal.cpp
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Generating Code...
   Ciudad.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  EDP3.vcxproj -> C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\x64\Debug\EDP3.exe
+ventanaPrincipal.obj : error LNK2005: main already defined in InsertarPais.obj
+ventanaPrincipal.obj : error LNK2005: "int __cdecl main(void)" (?main@@$$HYAHXZ) already defined in InsertarPais.obj
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\x64\Debug\EDP3.exe : fatal error LNK1169: one or more multiply defined symbols found
