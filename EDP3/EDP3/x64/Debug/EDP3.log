@@ -1,6 +1,3 @@
 ﻿  Paises.cpp
-  ventanaPrincipal.cpp
-  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
-  Generating Code...
-  Paises.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  EDP3.vcxproj -> C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\x64\Debug\EDP3.exe
+  Admins.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  EDP3.vcxproj -> C:\GitHub\Projects\Datos\TECDatosP3\EDP3\x64\Debug\EDP3.exe

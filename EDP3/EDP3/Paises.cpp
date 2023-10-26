@@ -20,7 +20,8 @@ ArbolPais::ArbolPais() {
 }
 
 string ArbolPais::hola() {
-	return "hola";
+	preorden();
+	return raiz->nombre;
 }
 
 void ArbolPais::insertarAux(NodoPais* r, int id, string nombre) {
@@ -72,13 +73,15 @@ NodoPais* ArbolPais::buscarAux(NodoPais* r, int id) {
 	}
 }
 
-void ArbolPais::buscar(int id) {
+string ArbolPais::buscar(int id) {
 	NodoPais* buscado = buscarAux(raiz, id);
 	if (buscado == NULL) {
 		cout << "No existe este pais" << endl;
+		return "";
 	}
 	else {
 		cout << "ID: " << buscado->id << "\nNombre: " << buscado->nombre << endl;
+		return  buscado->nombre;
 	}
 }
 
@@ -161,7 +164,7 @@ void ArbolPais::preorden() {
 
 
 void ArbolPais::cargarPais() {
-	ifstream archivo("Archivos/Paises.txt");
+	ifstream archivo("Paises.txt");
 	string line;
 
 	while (getline(archivo, line)) {
