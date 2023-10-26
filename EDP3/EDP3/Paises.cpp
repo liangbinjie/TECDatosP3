@@ -73,13 +73,15 @@ NodoPais* ArbolPais::buscarAux(NodoPais* r, int id) {
 	}
 }
 
-void ArbolPais::buscar(int id) {
+string ArbolPais::buscar(int id) {
 	NodoPais* buscado = buscarAux(raiz, id);
 	if (buscado == NULL) {
 		cout << "No existe este pais" << endl;
+		return "";
 	}
 	else {
 		cout << "ID: " << buscado->id << "\nNombre: " << buscado->nombre << endl;
+		return  buscado->nombre;
 	}
 }
 

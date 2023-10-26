@@ -23,8 +23,7 @@ ArbolCiudad::ArbolCiudad() {
     raiz = NULL;
 }
 
-void ArbolCiudad::insertar(int id, int idPais, string nombre, ArbolPais& aPaises) {
-    if (aPaises.existePais(idPais)) {
+void ArbolCiudad::insertar(int id, int idPais, string nombre, ArbolPais aPaises) {
         if (raiz == NULL) {
             raiz = new NodoCiudad(id, idPais, nombre);
             cout << "Nueva ciudad insertada" << nombre << endl;
@@ -39,13 +38,6 @@ void ArbolCiudad::insertar(int id, int idPais, string nombre, ArbolPais& aPaises
                 insertarBalanceado(raiz, id, idPais, nombre, Hh);
             }
         }
-
-
-    }
-    else {
-        cout << "Incongruencias con la ubicacion ttt" << id << endl;
-
-    }
 }
 
 
@@ -259,17 +251,17 @@ bool ArbolCiudad::existeCiudad(int id, int idPais) {
 
 
 
-void ArbolCiudad::buscarCiudad(int id, int idPais, ArbolPais& aPaises) {
+string ArbolCiudad::buscarCiudad(int id, int idPais) {
     cout << "entro" << endl;
     NodoCiudad* buscado = existeAuxCiudad(raiz, id, idPais);
     if (buscado == NULL) {
         cout << "No existe esta ciudad" << endl;
+        return "";
     }
     else {
-        if (aPaises.existePais(idPais)) {
-            NodoPais* pais = aPaises.punteroPais(idPais);
-            cout << "ID: " << buscado->id << "\nNombre: " << buscado->nombre << "\nPais: " << pais->nombre << endl;
-        }
+        cout << "ID: " << buscado->id << "\nNombre: " << buscado->nombre << "\nPais: " << buscado->nombre << endl;
+        return buscado->nombre;
+
     }
 }
 
@@ -455,7 +447,7 @@ void ArbolCiudad::postorden() {
     cout << endl;
 }
 
-void ArbolCiudad::cargarCiudades(ArbolPais& aPaises) {
+void ArbolCiudad::cargarCiudades(ArbolPais aPaises) {
     string str;
     ifstream archivo;
     archivo.open("Ciudades.txt");

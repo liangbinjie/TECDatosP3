@@ -35,7 +35,7 @@ public:
 	void reporte();
 	void insertar(int id, string nombre);
 	void cargarPais();
-	void buscar(int id);
+	string buscar(int id);
 	bool existePais(int id);
 	void modificar(int id, string nombreNuevo);
 	NodoPais* existeAux(NodoPais* r, int id);

@@ -11,5 +11,7 @@ extern listaAdmins administradores;
 extern listaAdmins clientes;
 
 extern bool boolInsertarPais;
+extern bool boolBuscarPais;
+extern bool boolModificarPais;
 
 #endif

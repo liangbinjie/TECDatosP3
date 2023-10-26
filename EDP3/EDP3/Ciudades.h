@@ -42,7 +42,7 @@ private:
 public:
 	ArbolCiudad();
 	void insertarBalanceado(NodoCiudad*& r, int id, int idPais, string nombre, bool& Hh);
-	void insertar(int id, int idPais, string nombre, ArbolPais& aPaises);
+	void insertar(int id, int idPais, string nombre, ArbolPais aPaises);
 	void RotacionDobleIzquierda(NodoCiudad*& n, NodoCiudad*& n1);
 	void RotacionDobleDerecha(NodoCiudad*& n, NodoCiudad*& n1);
 	void RotacionSimpleDerecha(NodoCiudad*& n, NodoCiudad*& n1);
@@ -59,8 +59,8 @@ public:
 
 
 	//void insertar(int id, string nombre);
-	void cargarCiudades(ArbolPais& aPaises);
-	void buscarCiudad(int id, int idPais, ArbolPais& aPaises);
+	void cargarCiudades(ArbolPais aPaises);
+	string buscarCiudad(int id, int idPais);
 	//bool existe(int id);
 	void modificar(int id, string nombre, int idPais, ArbolPais& aPaises);
 
