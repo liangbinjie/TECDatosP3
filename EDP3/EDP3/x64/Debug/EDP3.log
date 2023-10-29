@@ -1,3 +1,20 @@
-﻿  Paises.cpp
-  Admins.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  EDP3.vcxproj -> C:\GitHub\Projects\Datos\TECDatosP3\EDP3\x64\Debug\EDP3.exe
+﻿  FormCiudades.cpp
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\FormCiudades.h(183,9): warning C4068: unknown pragma 'endregions'
+  FormRestaurantes.cpp
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\FormRestaurantes.h(216,2): error C2065: 'string': undeclared identifier
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\FormRestaurantes.h(216,9): error C2146: syntax error: missing ';' before identifier 'name'
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\FormRestaurantes.h(216,9): error C2065: 'name': undeclared identifier
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\FormRestaurantes.h(216,16): error C2653: 'msclr': is not a class or namespace name
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\FormRestaurantes.h(216,32): error C2065: 'marshal_as': undeclared identifier
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\FormRestaurantes.h(216,48): error C2039: 'string': is not a member of 'std'
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\predefined C++ types (compiler internal)(347,11): message : see declaration of 'std'
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\FormRestaurantes.h(216,48): error C2065: 'string': undeclared identifier
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\FormRestaurantes.h(218,6): error C2065: 'resturantes': undeclared identifier
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\FormRestaurantes.h(222,7): error C2065: 'paises': undeclared identifier
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\FormRestaurantes.h(223,4): error C2065: 'ciudades': undeclared identifier
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\FormRestaurantes.h(223,32): error C2065: 'name': undeclared identifier
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\FormRestaurantes.h(223,38): error C2065: 'paises': undeclared identifier
+  MyForm.cpp
+  ventanaPrincipal.cpp
+C:\Users\Usuario\Documents\GitHub\TECDatosP3\EDP3\EDP3\FormCiudades.h(183,9): warning C4068: unknown pragma 'endregions'
+  Generating Code...
