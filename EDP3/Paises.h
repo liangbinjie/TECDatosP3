@@ -30,6 +30,8 @@ private:
 	void preorden(NodoPais* r);
 	void reporte(NodoPais* r, ofstream& archivo);
 	NodoPais* modificarAux(NodoPais* r, int id, string nombreNuevo);
+	NodoPais* nodoMinimo(NodoPais* nodo);
+	NodoPais* eliminarAux(NodoPais* r, int id);
 public:
 	ArbolPais();
 	void reporte();
@@ -41,6 +43,7 @@ public:
 	NodoPais* existeAux(NodoPais* r, int id);
 	NodoPais* punteroPais(int id);
 	void preorden();
+	void eliminar(int id);
 };
 
 

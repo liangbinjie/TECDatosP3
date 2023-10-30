@@ -195,3 +195,58 @@ void ArbolPais::reporte(NodoPais* r, ofstream& archivo) {
 		reporte(r->der, archivo);
 	}
 }
+
+NodoPais* ArbolPais::eliminarAux(NodoPais* r, int id) {
+	if (r == NULL) {
+		return r;
+	}
+
+	if (id < r->id) {
+		r->izq = eliminarAux(r->izq, id);
+	}
+	else if (id > r->id) {
+		r->der = eliminarAux(r->der, id);
+	}
+	else {
+		// Nodo con un solo hijo o sin hijos
+		if (r->izq == NULL) {
+			NodoPais* temp = r->der;
+			delete r;
+			return temp;
+		}
+		else if (r->der == NULL) {
+			NodoPais* temp = r->izq;
+			delete r;
+			return temp;
+		}
+
+		// Nodo con dos hijos
+		NodoPais* temp = nodoMinimo(r->der);
+
+		r->id = temp->id;
+		r->nombre = temp->nombre;
+
+		r->der = eliminarAux(r->der, temp->id);
+	}
+	return r;
+}
+
+void ArbolPais::eliminar(int id) {
+	if (!existePais(id)) {
+		cout << "No existe este pa¨ªs" << endl;
+	}
+	else {
+		raiz = eliminarAux(raiz, id);
+		cout << "Pa¨ªs eliminado" << endl;
+	}
+}
+
+NodoPais* ArbolPais::nodoMinimo(NodoPais* nodo) {
+	NodoPais* actual = nodo;
+
+	while (actual && actual->izq != NULL) {
+		actual = actual->izq;
+	}
+
+	return actual;
+}

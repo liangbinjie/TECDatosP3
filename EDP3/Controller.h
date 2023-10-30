@@ -3,7 +3,6 @@
 
 #include "Paises.h"
 #include "Ciudades.h"
-#include "restaurantes.h"
 #include "Admins.h"
 
 // extern variables for Paises ----------------------------------------
@@ -23,7 +22,7 @@ extern bool boolEliminarCiudad;
 
 
 // extern variables for restaurantes ----------------------------------------
-extern Restaurante rest;
+//extern ArbolRestaurante rest;
 extern bool boolInsertarRest;
 extern bool boolBuscarRest;
 extern bool boolModificarRest;
