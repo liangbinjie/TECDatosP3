@@ -3,6 +3,7 @@
 
 #include "Paises.h"
 #include "Ciudades.h"
+#include "restaurantes.h"
 #include "Admins.h"
 
 // extern variables for Paises ----------------------------------------
@@ -19,6 +20,14 @@ extern bool boolInsertarCiudad;
 extern bool boolBuscarCiudad;
 extern bool boolModificarCiudad;
 extern bool boolEliminarCiudad;
+
+
+// extern variables for restaurantes ----------------------------------------
+extern Restaurante rest;
+extern bool boolInsertarRest;
+extern bool boolBuscarRest;
+extern bool boolModificarRest;
+extern bool boolEliminarRest;
 
 
 // extern variables for clientes ----------------------------------------
