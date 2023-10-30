@@ -5,6 +5,7 @@
 using namespace std;
 #include "Paises.h"
 #include "Ciudades.h"
+#include "restaurantes.h"
 
 struct NodoMenu {
     int clave;
