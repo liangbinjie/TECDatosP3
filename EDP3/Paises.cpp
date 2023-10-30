@@ -19,11 +19,6 @@ ArbolPais::ArbolPais() {
 	raiz = NULL;
 }
 
-string ArbolPais::hola() {
-	preorden();
-	return raiz->nombre;
-}
-
 void ArbolPais::insertarAux(NodoPais* r, int id, string nombre) {
 	if (r->id > id) {
 		if (r->izq == NULL) {

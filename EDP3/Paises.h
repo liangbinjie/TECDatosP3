@@ -41,7 +41,6 @@ public:
 	NodoPais* existeAux(NodoPais* r, int id);
 	NodoPais* punteroPais(int id);
 	void preorden();
-	string hola();
 };
 
 
