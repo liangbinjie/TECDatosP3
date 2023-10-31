@@ -6,6 +6,7 @@
 #include "Admins.h"
 #include "ListaRest.h"
 #include "Restaurantes.h"
+#include "Menu.h"
 
 // extern variables for Paises ----------------------------------------
 extern ArbolPais paises;
@@ -30,6 +31,15 @@ extern bool boolInsertarRest;
 extern bool boolBuscarRest;
 extern bool boolModificarRest;
 extern bool boolEliminarRest;
+
+
+
+// extern variables for menu ----------------------------------------
+extern ArbolMenu menu;
+extern bool boolInsertarMenu;
+extern bool boolBuscarMenu;
+extern bool boolModificarMenu;
+extern bool boolEliminarMenu;
 
 
 // extern variables for clientes ----------------------------------------

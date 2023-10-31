@@ -105,6 +105,38 @@ void ArbolMenu::buscar(int clave, int idPais, int idCiudad, int idRest) {
     return buscarRec(raiz, clave, idPais, idCiudad, idRest);
 }
 
+void ArbolMenu::buscarStr(int clave, int idPais, int idCiudad, int idRest) {
+    if (!existe(clave, idPais, idCiudad, idRest)) {
+        cout << "Este menu no existe" << endl;
+        return;
+    }
+    return buscarRecStr(raiz, clave, idPais, idCiudad, idRest);
+}
+
+
+void ArbolMenu::buscarRecStr(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest) {
+    if (nodo == nullptr) {
+        return;
+    }
+
+    if (clave == nodo->clave && idPais == nodo->idPais && nodo->idCiudad == idCiudad && idRest == nodo->idRest) {
+        string nom = nodo->nombre;
+        nombre(nom);
+        return;
+    }
+    else if (clave < nodo->clave) {
+        return buscarRecStr(nodo->izquierda, clave, idPais, idCiudad, idRest);
+    }
+    else {
+        return buscarRecStr(nodo->derecha, clave, idPais, idCiudad, idRest);
+    }
+}
+
+string nombre(string nom) {
+    return nom;
+
+}
+
 void ArbolMenu::buscarRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest) {
     if (nodo == nullptr) {
         return;
