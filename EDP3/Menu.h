@@ -8,15 +8,15 @@ using namespace std;
 #include "restaurantes.h"
 
 struct NodoMenu {
-    int clave;
-    int nivel;
-    int idPais;
-    int idCiudad;
-    int idRest;
-    int cont;
-    string nombre;
-    NodoMenu* izquierda;
-    NodoMenu* derecha;
+	int clave;
+	int nivel;
+	int idPais;
+	int idCiudad;
+	int idRest;
+	int cont;
+	string nombre;
+	NodoMenu* izquierda;
+	NodoMenu* derecha;
 };
 
 
