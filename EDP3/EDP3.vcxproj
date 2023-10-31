@@ -134,6 +134,7 @@
     <ClCompile Include="FormClientes.cpp" />
     <ClCompile Include="FormMenu.cpp" />
     <ClCompile Include="FormPaises.cpp" />
+    <ClCompile Include="FormProducto.cpp" />
     <ClCompile Include="FormRestaurante.cpp" />
     <ClCompile Include="ListaRest.cpp" />
     <ClCompile Include="LoginForm.cpp" />
@@ -159,6 +160,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FormPaises.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormProducto.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FormRestaurante.h">

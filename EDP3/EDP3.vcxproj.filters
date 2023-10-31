@@ -60,6 +60,9 @@
     <ClCompile Include="FormMenu.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="FormProducto.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ventanaPrincipal.h">
@@ -108,6 +111,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="FormMenu.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="FormProducto.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
