@@ -1,4 +1,8 @@
 #include "Menu.h"
+#include "Controller.h"
+#include "Paises.h"
+#include "Ciudades.h"
+#include "Restaurantes.h"
 
 ArbolMenu::ArbolMenu() {
     raiz = nullptr;
@@ -105,6 +109,7 @@ void ArbolMenu::buscar(int clave, int idPais, int idCiudad, int idRest) {
     return buscarRec(raiz, clave, idPais, idCiudad, idRest);
 }
 
+/*
 void ArbolMenu::buscarStr(int clave, int idPais, int idCiudad, int idRest) {
     if (!existe(clave, idPais, idCiudad, idRest)) {
         cout << "Este menu no existe" << endl;
@@ -136,6 +141,8 @@ string nombre(string nom) {
     return nom;
 
 }
+
+*/
 
 void ArbolMenu::buscarRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest) {
     if (nodo == nullptr) {

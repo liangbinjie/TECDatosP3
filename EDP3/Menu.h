@@ -8,15 +8,15 @@ using namespace std;
 #include "restaurantes.h"
 
 struct NodoMenu {
-    int clave;
-    int nivel;
-    int idPais;
-    int idCiudad;
-    int idRest;
-    int cont;
-    string nombre;
-    NodoMenu* izquierda;
-    NodoMenu* derecha;
+	int clave;
+	int nivel;
+	int idPais;
+	int idCiudad;
+	int idRest;
+	int cont;
+	string nombre;
+	NodoMenu* izquierda;
+	NodoMenu* derecha;
 };
 
 
@@ -27,8 +27,8 @@ public:
 	void mostrar();
 	bool existe(int clave, int idPais, int idCiudad, int idRest);
 	void buscar(int clave, int idPais, int idCiudad, int idRest);
-	string nombre(string nom);
-	void buscarStr(int clave, int idPais, int idCiudad, int idRest);
+	//string nombre(string nom);
+	//void buscarStr(int clave, int idPais, int idCiudad, int idRest);
 	void modificar(int clave, int idPais, int idCiudad, int idRest, string nuevoNombre);
 	void cargarMenus(ArbolPais paises, ArbolCiudad ciudades, ArbolRestaurante rests);
 	void masBuscado();
@@ -43,7 +43,7 @@ private:
 	void mostrarRec(NodoMenu* nodo, int profundidad);
 	bool existeRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest);
 	void buscarRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest);
-	void buscarRecStr(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest);
+	//void buscarRecStr(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest);
 	void modificar(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest, string nuevoNombre);
 	void reporte(NodoMenu* nodo, int profundidad, ofstream& archivo, int idP, int idC, int idR);
 	void masBuscado(NodoMenu* nodo, int profundidad, NodoMenu* menu);
