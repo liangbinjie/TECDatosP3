@@ -54,6 +54,12 @@
     <ClCompile Include="ListaRest.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="FormMenu.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ventanaPrincipal.h">
@@ -95,6 +101,12 @@
     <ClInclude Include="ListaRest.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="FormMenu.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Ciudades.txt">
@@ -118,5 +130,10 @@
     <Text Include="Administradores.txt">
       <Filter>Archivos de recursos</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormMenu.resx">
+      <Filter>Archivos de encabezado</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

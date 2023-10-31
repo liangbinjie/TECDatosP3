@@ -132,10 +132,12 @@
     <ClCompile Include="FormAdmin.cpp" />
     <ClCompile Include="FormCiudades.cpp" />
     <ClCompile Include="FormClientes.cpp" />
+    <ClCompile Include="FormMenu.cpp" />
     <ClCompile Include="FormPaises.cpp" />
     <ClCompile Include="FormRestaurante.cpp" />
     <ClCompile Include="ListaRest.cpp" />
     <ClCompile Include="LoginForm.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Paises.cpp" />
     <ClCompile Include="Restaurantes.cpp" />
     <ClCompile Include="ventanaPrincipal.cpp" />
@@ -153,6 +155,7 @@
     <ClInclude Include="FormClientes.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="FormMenu.h" />
     <ClInclude Include="FormPaises.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -163,6 +166,7 @@
     <ClInclude Include="LoginForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Paises.h" />
     <ClInclude Include="Restaurantes.h" />
     <ClInclude Include="ventanaPrincipal.h">
@@ -179,6 +183,7 @@
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMenu.resx" />
     <EmbeddedResource Include="FormPaises.resx">
       <DependentUpon>FormPaises.h</DependentUpon>
     </EmbeddedResource>
