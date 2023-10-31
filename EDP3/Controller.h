@@ -4,6 +4,8 @@
 #include "Paises.h"
 #include "Ciudades.h"
 #include "Admins.h"
+#include "ListaRest.h"
+#include "Restaurantes.h"
 
 // extern variables for Paises ----------------------------------------
 extern ArbolPais paises;
@@ -22,7 +24,8 @@ extern bool boolEliminarCiudad;
 
 
 // extern variables for restaurantes ----------------------------------------
-//extern ArbolRestaurante rest;
+extern ArbolRestaurante rest;
+extern listaRest restaurantes;
 extern bool boolInsertarRest;
 extern bool boolBuscarRest;
 extern bool boolModificarRest;
