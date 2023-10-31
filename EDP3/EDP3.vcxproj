@@ -186,6 +186,9 @@
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMenu.resx">
+      <DependentUpon>FormMenu.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPaises.resx">
       <DependentUpon>FormPaises.h</DependentUpon>
     </EmbeddedResource>

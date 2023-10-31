@@ -80,7 +80,7 @@ void ArbolMenu::mostrarRec(NodoMenu* nodo, int profundidad) {
         for (int i = 0; i < profundidad; i++) {
             std::cout << "  ";
         }
-        std::cout << "(" << nodo->clave << "," << nodo->nivel << ")" << std::endl;
+        std::cout << "(" << nodo->clave << "," << nodo->nombre << ")" << std::endl;
         mostrarRec(nodo->izquierda, profundidad + 1);
     }
 }
@@ -93,7 +93,7 @@ bool ArbolMenu::existeRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, i
     if (clave == nodo->clave && idPais == nodo->idPais && nodo->idCiudad == idCiudad && idRest == nodo->idRest) {
         return true;
     }
-    else if (clave < nodo->clave) {
+    else if (clave <= nodo->clave) {
         return existeRec(nodo->izquierda, clave, idPais, idCiudad, idRest);
     }
     else {
@@ -101,10 +101,10 @@ bool ArbolMenu::existeRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, i
     }
 }
 
-void ArbolMenu::buscar(int clave, int idPais, int idCiudad, int idRest) {
+string ArbolMenu::buscar(int clave, int idPais, int idCiudad, int idRest) {
     if (!existe(clave, idPais, idCiudad, idRest)) {
         cout << "Este menu no existe" << endl;
-        return;
+        return "";
     }
     return buscarRec(raiz, clave, idPais, idCiudad, idRest);
 }
@@ -144,9 +144,9 @@ string nombre(string nom) {
 
 */
 
-void ArbolMenu::buscarRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest) {
+string ArbolMenu::buscarRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest) {
     if (nodo == nullptr) {
-        return;
+        return "";
     }
 
     if (clave == nodo->clave && idPais == nodo->idPais && nodo->idCiudad == idCiudad && idRest == nodo->idRest) {
@@ -157,9 +157,9 @@ void ArbolMenu::buscarRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, i
         cout << "Nombre menu: " << nodo->nombre << endl;
         nodo->cont++;
         cout << "Busquedas: " << nodo->cont << endl;
-        return;
+        return nodo->nombre;
     }
-    else if (clave < nodo->clave) {
+    else if (clave <= nodo->clave) {
         return buscarRec(nodo->izquierda, clave, idPais, idCiudad, idRest);
     }
     else {

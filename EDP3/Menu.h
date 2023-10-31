@@ -26,7 +26,7 @@ public:
 	void insertar(int clave, int idPais, int idCiudad, int idRest, string nombre, ArbolPais paises, ArbolCiudad ciudades, ArbolRestaurante restaurantes);
 	void mostrar();
 	bool existe(int clave, int idPais, int idCiudad, int idRest);
-	void buscar(int clave, int idPais, int idCiudad, int idRest);
+	string buscar(int clave, int idPais, int idCiudad, int idRest);
 	//string nombre(string nom);
 	//void buscarStr(int clave, int idPais, int idCiudad, int idRest);
 	void modificar(int clave, int idPais, int idCiudad, int idRest, string nuevoNombre);
@@ -42,7 +42,7 @@ private:
 	NodoMenu* insertarRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest, string nombre);
 	void mostrarRec(NodoMenu* nodo, int profundidad);
 	bool existeRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest);
-	void buscarRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest);
+	string buscarRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest);
 	//void buscarRecStr(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest);
 	void modificar(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest, string nuevoNombre);
 	void reporte(NodoMenu* nodo, int profundidad, ofstream& archivo, int idP, int idC, int idR);
