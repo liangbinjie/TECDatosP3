@@ -68,6 +68,10 @@ public:
 	void inorden();
 	void postorden();
 
+	NodoCiudad* eliminarNodo(NodoCiudad* raiz, int id, int idPais);
+	NodoCiudad* nodoMasIzquierdo(NodoCiudad* nodo);
+	void eliminar(int id, int idPais);
+
 };
 
 

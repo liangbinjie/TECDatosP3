@@ -2,7 +2,7 @@
 
 nodoRest::nodoRest(int id, int idP, int idC, string nombre) {
     this->id = id;
-    this->idPais = idC;
+    this->idPais = idP;
     this->idCiudad = idC;
     this->nombre = nombre;
     this->siguiente = NULL;
@@ -13,19 +13,14 @@ listaRest::listaRest() {
 }
 
 bool listaRest::existePP(int id, int idPais, int idCiudad) {
-    cout << " entro a existe restaurante" << endl;
     nodoRest* aux = head;
-    while (aux != NULL) {
-        cout << "bbb" << endl;
-        cout << aux->id << endl;
-        cout << aux->id << " a " << id << "  b  " << aux->idPais << "  c  " << idPais << "  d  " << aux->idCiudad << "  e   " << idCiudad << " i " << aux->nombre << endl;
-        if (aux->id == id && aux->idPais == idPais && aux->idCiudad == idCiudad) {
-            cout << "si existe restaurante" << aux->id << endl;
+    while (aux) {
+        cout << aux->id << "a" << id << " | " << aux->idPais << "b" << idPais << " | " << aux->idCiudad << "c" << idCiudad << endl;
+        if (aux->id == id && aux->idCiudad == idCiudad && aux->idPais == idPais) {
             return true;
         }
         aux = aux->siguiente;
     }
-    cout << " falsoo" << endl;
     return false;
 }
 
@@ -48,26 +43,26 @@ void listaRest::insertar(int id, int idP, int idC, string nombre, ArbolPais& pai
         return;
     }
     else {
-        // if (ciudades.existeCiudad(idC, idP)) {
-        if (paises.existePais(idP)) {
-            if (head == NULL) {
-                head = nuevo;
+        if (ciudades.existeCiudad(idC, idP)) {
+            if (paises.existePais(idP)) {
+                if (head == NULL) {
+                    head = nuevo;
+                }
+                else {
+                    nodoRest* aux = head;
+                    while (aux->siguiente != NULL) {
+                        aux = aux->siguiente;
+                    }
+                    aux->siguiente = nuevo;
+                }
+                restaurantes.insertar(idP, idC, id, nombre);
+                cout << "Nuevo rest insertado" << endl;
             }
             else {
-                nodoRest* aux = head;
-                while (aux->siguiente != NULL) {
-                    aux = aux->siguiente;
-                }
-                aux->siguiente = nuevo;
+                cout << "No existe el pais o ciudad" << endl;
+                return;
             }
-            restaurantes.insertar(idP, idC, id, nombre);
-            cout << "Nuevo rest insertado" << endl;
         }
-        else {
-            cout << "No existe el pais o ciudad" << endl;
-            return;
-        }
-        //}
     }
 }
 
@@ -117,5 +112,31 @@ void listaRest::modificar(int id, int idP, int idC, string nombreNuevo) {
             return;
         }
         aux = aux->siguiente;
+    }
+}
+
+void listaRest::eliminar(int id, int idP, int idC) {
+    if (head == NULL) {
+        cout << "No hay restaurantes";
+    }
+    else {
+        if (id == head->id && idP == head->idPais && head->idCiudad == idC) {
+            nodoRest* temp = head;
+            head = head->siguiente;
+            delete temp;
+            return;
+        }
+
+        nodoRest* temp = head;
+        while (temp->siguiente && temp->siguiente->id != id && idP != temp->siguiente->idPais && temp->siguiente->idCiudad != idC) {
+            temp = temp->siguiente;
+        }
+
+        if (temp->siguiente) {
+            nodoRest* nodoEliminar = temp->siguiente;
+            temp->siguiente = nodoEliminar->siguiente;
+            delete nodoEliminar;
+            return;
+        }
     }
 }

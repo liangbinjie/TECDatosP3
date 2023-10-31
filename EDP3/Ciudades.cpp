@@ -1,4 +1,5 @@
 #include "Ciudades.h"
+#include "Controller.h"
 
 NodoCiudad::NodoCiudad() {
 	id = 0;
@@ -213,12 +214,13 @@ NodoCiudad* ArbolCiudad::existeAuxCiudad(NodoCiudad* r, int id, int idPais) {
         return r;
     }
 
-    if (id < r->id) {
+    if (id <= r->id) {
         return existeAuxCiudad(r->izq, id, idPais);
     }
     else if (id > r->id) {
         return existeAuxCiudad(r->der, id, idPais);
     }
+    /*
     else {
         if (idPais < r->idPais) {
             return existeAuxCiudad(r->izq, id, idPais);
@@ -227,6 +229,7 @@ NodoCiudad* ArbolCiudad::existeAuxCiudad(NodoCiudad* r, int id, int idPais) {
             return existeAuxCiudad(r->der, id, idPais);
         }
     }
+    */
 }
 
 
@@ -235,6 +238,7 @@ NodoCiudad* ArbolCiudad::existeAuxCiudad(NodoCiudad* r, int id, int idPais) {
 
 
 bool ArbolCiudad::existeCiudad(int id, int idPais) {
+    postorden();
     cout << " entro a existe ciudad" << endl;
     NodoCiudad* buscado = existeAuxCiudad(raiz, id, idPais);
     if (buscado == NULL) {
@@ -448,31 +452,88 @@ void ArbolCiudad::postorden() {
 }
 
 void ArbolCiudad::cargarCiudades(ArbolPais aPaises) {
-    string str;
-    ifstream archivo;
-    archivo.open("Ciudades.txt");
-    while (archivo >> str) {
-        int cont = 0;
+    ifstream archivo("Ciudades.txt");
+    string line;
+
+    while (getline(archivo, line)) {
+        stringstream ss(line);
+        string temp;
         int idP, idC;
-        string name = "", temp;
-        for (char& c : str) {
-            if (c == ';') {
-                if (cont == 0) {
-                    idP = stoi(temp);
-                }
-                else if (cont == 1) {
-                    idC = stoi(temp);
-                }
-                temp = "";
-                cont++;
-            }
-            else {
-                temp += c;
-            }
-        }
-        name = temp;
-        insertar(idC, idP, name, aPaises);
+        string name;
+
+        getline(ss, temp, ';');
+        idP = stoi(temp);
+
+        getline(ss, temp, ';');
+        idC = stoi(temp);
+
+        getline(ss, name, ';');
+
+        insertar(idC, idP, name, paises);
     }
     archivo.close();
-    str = "";
+}
+
+
+NodoCiudad* ArbolCiudad::eliminarNodo(NodoCiudad* raiz, int id, int idPais) {
+    if (raiz == NULL) {
+        return raiz;
+    }
+
+    if (id < raiz->id || (id == raiz->id && idPais < raiz->idPais)) {
+        raiz->izq = eliminarNodo(raiz->izq, id, idPais);
+    }
+    else if (id > raiz->id || (id == raiz->id && idPais > raiz->idPais)) {
+        raiz->der = eliminarNodo(raiz->der, id, idPais);
+    }
+    else {
+        if (raiz->izq == NULL || raiz->der == NULL) {
+            NodoCiudad* temp = raiz->izq ? raiz->izq : raiz->der;
+
+            if (temp == NULL) {
+                temp = raiz;
+                raiz = NULL;
+            }
+            else {
+                *raiz = *temp;
+            }
+            delete temp;
+        }
+        else {
+            NodoCiudad* temp = nodoMasIzquierdo(raiz->der);
+            raiz->id = temp->id;
+            raiz->idPais = temp->idPais;
+            raiz->nombre = temp->nombre;
+            raiz->der = eliminarNodo(raiz->der, temp->id, temp->idPais);
+        }
+    }
+
+    if (raiz == NULL) {
+        return raiz;
+    }
+
+    // Actualizar el factor de equilibrio y reequilibrar
+    // (aqu¨ª se implementar¨ªan las rotaciones seg¨²n el factor de equilibrio)
+
+    return raiz;
+}
+
+NodoCiudad* ArbolCiudad::nodoMasIzquierdo(NodoCiudad* nodo) {
+    NodoCiudad* actual = nodo;
+
+    while (actual->izq != NULL) {
+        actual = actual->izq;
+    }
+
+    return actual;
+}
+
+void ArbolCiudad::eliminar(int id, int idPais) {
+    if (!existeCiudad(id, idPais)) {
+        cout << "La ciudad no existe en el ¨¢rbol." << endl;
+    }
+    else {
+        raiz = eliminarNodo(raiz, id, idPais);
+        cout << "La ciudad con ID " << id << " del pa¨ªs con ID " << idPais << " ha sido eliminada." << endl;
+    }
 }

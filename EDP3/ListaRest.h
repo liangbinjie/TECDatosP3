@@ -37,6 +37,7 @@ public:
     void cargarRest(ArbolPais& paises, ArbolCiudad& ciudades, ArbolRestaurante& restaurantes);
     string buscar(int id, int idP, int idC);
     void modificar(int id, int idP, int idC, string nombreNuevo);
+    void eliminar(int id, int idP, int idC);
 };
 
 #endif
