@@ -186,7 +186,6 @@
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMenu.resx" />
     <EmbeddedResource Include="FormPaises.resx">
       <DependentUpon>FormPaises.h</DependentUpon>
     </EmbeddedResource>
@@ -205,12 +204,6 @@
     <Text Include="Paises.txt" />
     <Text Include="Productos.txt" />
     <Text Include="Restaurantes.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="EDP3.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="design2.bin" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

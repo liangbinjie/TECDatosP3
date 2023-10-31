@@ -191,11 +191,14 @@ void listaAdmins::insertar(int cedula, string nombre) {
         raiz = new nodo(cedula, nombre);
     }
     else {
-        pnodo aux = raiz;
-        while (aux->siguiente != NULL) {
-            aux = aux->siguiente;
+        if (!existe(cedula)) {
+            pnodo aux = raiz;
+            while (aux->siguiente != NULL) {
+                aux = aux->siguiente;
+            }
+            aux->siguiente = new nodo(cedula, nombre);
         }
-        aux->siguiente = new nodo(cedula, nombre);
+        
     }
 }
 
@@ -214,6 +217,7 @@ void listaAdmins::mostrar() {
 
 bool listaAdmins::existe(int cedula) {
     pnodo aux = raiz;
+    mostrar();
     while (aux) {
         if (aux->cedula == cedula) {
             return true;
@@ -257,7 +261,7 @@ void listaAdmins::modificar(int cedula, string nombreNuevo) {
     }
 }
 
-/*
+
 void listaAdmins::eliminar(int cedula) {
     if (raiz == NULL) {
         cout << "No hay nada" << endl;
@@ -267,19 +271,21 @@ void listaAdmins::eliminar(int cedula) {
             pnodo temp = raiz;
             raiz = raiz->siguiente;
             delete temp;
+            return;
         }
-        else {
-            pnodo aux = raiz;
-            while (aux) {
-                aux = aux->siguiente;
-            }
-            pnodo temp = aux->siguiente;
-            aux->siguiente = aux->siguiente->siguiente;
-            delete temp;
+      
+        pnodo temp = raiz;
+        while (temp->siguiente && temp->siguiente->cedula != cedula) {
+            temp = temp->siguiente;
+        }
+        if (temp->siguiente) {
+            pnodo nodoEliminar = temp->siguiente;
+            temp->siguiente = nodoEliminar->siguiente;
+            delete nodoEliminar;
+            return;
         }
     }
 }
-*/
 
 void listaAdmins::cargarAdmins() {
     ifstream archivo("Administradores.txt");

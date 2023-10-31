@@ -134,19 +134,4 @@
       <Filter>Archivos de recursos</Filter>
     </Text>
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="FormMenu.resx">
-      <Filter>Archivos de recursos</Filter>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="EDP3.rc">
-      <Filter>Archivos de recursos</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="design2.bin">
-      <Filter>Archivos de recursos</Filter>
-    </None>
-  </ItemGroup>
 </Project>
