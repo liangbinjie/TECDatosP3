@@ -47,7 +47,7 @@ public:
     bool ArbolVacio();
     void insertarProducto(int codPais, int codCiudad, int codRest, int codMenu, int codProducto, string nombre, int kcal, int precio, int cant, ArbolPais& lPaises, ArbolCiudad& lCiudades, listaRest& lRests, ArbolMenu& lMenus);
     bool existeProducto(int pCodPais, int pCodCiudad, int pCodRes, int pCodMenu, int pCodProducto, ArbolPais& lPais, ArbolCiudad& lCiudad, listaRest& lRest, ArbolMenu& lMenuRest);
-    void buscarProducto(int pCodPais, int pCodCiudad, int pCodRest, int pCodMenu, int pCodProducto, ArbolPais& lPaises, ArbolCiudad& lCiudades, listaRest& lRest, ArbolMenu& lMenuRest);
+    NodoProducto* buscarProducto(int pCodPais, int pCodCiudad, int pCodRest, int pCodMenu, int pCodProducto, ArbolPais& lPaises, ArbolCiudad& lCiudades, listaRest& lRest, ArbolMenu& lMenuRest);
     void mostrar();
     void reporteProducto(int pCodPais, int pCodCiudad, int pCodRest, int pCodMenu, ArbolPais& lPaises, ArbolCiudad& lCiudades, listaRest& lRest, ArbolMenu& lMenu);
     void cargarProductos(ArbolPais& lPaises, ArbolCiudad& lCiudades, listaRest& lRests, ArbolMenu& lMenus);
