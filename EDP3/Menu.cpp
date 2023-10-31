@@ -30,6 +30,21 @@ bool ArbolMenu::existe(int clave, int idPais, int idCiudad, int idRest) {
     return existeRec(raiz, clave, idPais, idCiudad, idRest);
 }
 
+bool ArbolMenu::existeRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest) {
+    if (nodo == nullptr) {
+        return false;
+    }
+
+    if (clave == nodo->clave && idPais == nodo->idPais && idCiudad == nodo->idCiudad && idRest == nodo->idRest) {
+        return true;  // Nodo encontrado, retorna verdadero
+    }
+    else if (clave < nodo->clave) {
+        return existeRec(nodo->izquierda, clave, idPais, idCiudad, idRest);
+    }
+    else {
+        return existeRec(nodo->derecha, clave, idPais, idCiudad, idRest);
+    }
+}
 
 NodoMenu* ArbolMenu::sesgar(NodoMenu* nodo) {
     if (nodo == nullptr)
@@ -80,26 +95,11 @@ void ArbolMenu::mostrarRec(NodoMenu* nodo, int profundidad) {
         for (int i = 0; i < profundidad; i++) {
             std::cout << "  ";
         }
-        std::cout << "(" << nodo->clave << "," << nodo->nombre << ")" << std::endl;
+        std::cout << "(" << nodo->clave << "," << nodo->nombre << ")" << nodo->idPais << "++" << nodo->idCiudad << "++" << nodo->idRest << std::endl;
         mostrarRec(nodo->izquierda, profundidad + 1);
     }
 }
 
-bool ArbolMenu::existeRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest) {
-    if (nodo == nullptr) {
-        return false;
-    }
-
-    if (clave == nodo->clave && idPais == nodo->idPais && nodo->idCiudad == idCiudad && idRest == nodo->idRest) {
-        return true;
-    }
-    else if (clave <= nodo->clave) {
-        return existeRec(nodo->izquierda, clave, idPais, idCiudad, idRest);
-    }
-    else {
-        return existeRec(nodo->derecha, clave, idPais, idCiudad, idRest);
-    }
-}
 
 string ArbolMenu::buscar(int clave, int idPais, int idCiudad, int idRest) {
     if (!existe(clave, idPais, idCiudad, idRest)) {
@@ -109,42 +109,9 @@ string ArbolMenu::buscar(int clave, int idPais, int idCiudad, int idRest) {
     return buscarRec(raiz, clave, idPais, idCiudad, idRest);
 }
 
-/*
-void ArbolMenu::buscarStr(int clave, int idPais, int idCiudad, int idRest) {
-    if (!existe(clave, idPais, idCiudad, idRest)) {
-        cout << "Este menu no existe" << endl;
-        return;
-    }
-    return buscarRecStr(raiz, clave, idPais, idCiudad, idRest);
-}
-
-
-void ArbolMenu::buscarRecStr(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest) {
-    if (nodo == nullptr) {
-        return;
-    }
-
-    if (clave == nodo->clave && idPais == nodo->idPais && nodo->idCiudad == idCiudad && idRest == nodo->idRest) {
-        string nom = nodo->nombre;
-        nombre(nom);
-        return;
-    }
-    else if (clave < nodo->clave) {
-        return buscarRecStr(nodo->izquierda, clave, idPais, idCiudad, idRest);
-    }
-    else {
-        return buscarRecStr(nodo->derecha, clave, idPais, idCiudad, idRest);
-    }
-}
-
-string nombre(string nom) {
-    return nom;
-
-}
-
-*/
 
 string ArbolMenu::buscarRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest) {
+    mostrar();
     if (nodo == nullptr) {
         return "";
     }
@@ -159,7 +126,7 @@ string ArbolMenu::buscarRec(NodoMenu* nodo, int clave, int idPais, int idCiudad,
         cout << "Busquedas: " << nodo->cont << endl;
         return nodo->nombre;
     }
-    else if (clave <= nodo->clave) {
+    else if (clave < nodo->clave) {
         return buscarRec(nodo->izquierda, clave, idPais, idCiudad, idRest);
     }
     else {
@@ -267,4 +234,72 @@ void ArbolMenu::reporte(NodoMenu* nodo, int profundidad, ofstream& archivo, int 
             std::cout << "  ";
         }
     }
+}
+
+NodoMenu* ArbolMenu::eliminar(int clave, int idPais, int idCiudad, int idRest) {
+    if (!existe(clave, idPais, idCiudad, idRest)) {
+        cout << "Este menu no existe" << endl;
+        return raiz;
+    }
+    raiz = eliminarRec(raiz, clave, idPais, idCiudad, idRest);
+    cout << "Nodo eliminado" << endl;
+    return raiz;
+}
+
+NodoMenu* ArbolMenu::eliminarRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest) {
+    if (nodo == nullptr) {
+        return nullptr;
+    }
+
+    if (clave < nodo->clave) {
+        nodo->izquierda = eliminarRec(nodo->izquierda, clave, idPais, idCiudad, idRest);
+    }
+    else if (clave > nodo->clave) {
+        nodo->derecha = eliminarRec(nodo->derecha, clave, idPais, idCiudad, idRest);
+    }
+    else {
+        if (idPais == nodo->idPais && idCiudad == nodo->idCiudad && idRest == nodo->idRest) {
+            if (nodo->izquierda == nullptr && nodo->derecha == nullptr) {
+                delete nodo;
+                return nullptr;
+            }
+            else if (nodo->izquierda == nullptr) {
+                NodoMenu* temp = nodo->derecha;
+                delete nodo;
+                return temp;
+            }
+            else if (nodo->derecha == nullptr) {
+                NodoMenu* temp = nodo->izquierda;
+                delete nodo;
+                return temp;
+            }
+            else {
+                NodoMenu* sucesor = encontrarSucesor(nodo->derecha);
+                nodo->clave = sucesor->clave;
+                nodo->idPais = sucesor->idPais;
+                nodo->idCiudad = sucesor->idCiudad;
+                nodo->idRest = sucesor->idRest;
+                nodo->nombre = sucesor->nombre;
+                nodo->derecha = eliminarRec(nodo->derecha, sucesor->clave, sucesor->idPais, sucesor->idCiudad, sucesor->idRest);
+            }
+        }
+        else if (clave < nodo->clave) {
+            nodo->izquierda = eliminarRec(nodo->izquierda, clave, idPais, idCiudad, idRest);
+        }
+        else {
+            nodo->derecha = eliminarRec(nodo->derecha, clave, idPais, idCiudad, idRest);
+        }
+    }
+
+    nodo = sesgar(nodo);
+    nodo = dividir(nodo);
+    return nodo;
+}
+
+NodoMenu* ArbolMenu::encontrarSucesor(NodoMenu* nodo) {
+    NodoMenu* actual = nodo;
+    while (actual->izquierda != nullptr) {
+        actual = actual->izquierda;
+    }
+    return actual;
 }

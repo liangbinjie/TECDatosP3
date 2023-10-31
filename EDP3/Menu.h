@@ -33,6 +33,9 @@ public:
 	void cargarMenus(ArbolPais paises, ArbolCiudad ciudades, ArbolRestaurante rests);
 	void masBuscado();
 	void reporte(int idP, int idC, int idR);
+	NodoMenu* eliminar(int clave, int idPais, int idCiudad, int idRest);
+
+
 
 
 private:
@@ -47,6 +50,8 @@ private:
 	void modificar(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest, string nuevoNombre);
 	void reporte(NodoMenu* nodo, int profundidad, ofstream& archivo, int idP, int idC, int idR);
 	void masBuscado(NodoMenu* nodo, int profundidad, NodoMenu* menu);
+	NodoMenu* encontrarSucesor(NodoMenu* nodo);
+	NodoMenu* eliminarRec(NodoMenu* nodo, int clave, int idPais, int idCiudad, int idRest);
 
 
 };
