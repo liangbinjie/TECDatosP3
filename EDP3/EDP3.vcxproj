@@ -140,6 +140,7 @@
     <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Paises.cpp" />
+    <ClCompile Include="Productos.cpp" />
     <ClCompile Include="Restaurantes.cpp" />
     <ClCompile Include="ventanaPrincipal.cpp" />
   </ItemGroup>
@@ -174,6 +175,7 @@
     </ClInclude>
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Paises.h" />
+    <ClInclude Include="Productos.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Restaurantes.h" />
     <ClInclude Include="ventanaPrincipal.h">
