@@ -38,29 +38,23 @@ bool ArbolProducto::ArbolVacio() {
 
 
 
-NodoProducto* ArbolProducto::buscarProducto(int pCodPais, int pCodCiudad, int pCodRest, int pCodMenu, int pCodProducto, ArbolPais& lPaises, ArbolCiudad& lCiudades, listaRest& lRest, ArbolMenu& lMenu) {
+NodoProducto* ArbolProducto::buscarProducto(int pCodPais, int pCodCiudad, int pCodRest, int pCodMenu, int pCodProducto) {
     NodoProducto* aux = primero;
     if (primero == NULL) {
         cout << "No hay elementos" << endl;
     }
     else {
         aux = primero;
-        while (aux) {
-            cout << aux->codMenu << "asd" << endl;
-            if (aux->codMenu == pCodMenu && aux->codPais == pCodPais && aux->codCiudad == pCodCiudad && aux->codRest == pCodRest && aux->codProducto == pCodProducto) {
-                cout << "Datos del producto" << endl;
-                cout << "Codigo del pais: " << aux->codPais << "  " << endl;
-                cout << "Codigo de la ciudad: " << aux->codCiudad << endl;
-                cout << "Codigo del restaurante: " << aux->codRest << endl;
-                cout << "Codigo del producto: " << aux->nombre << "  " << aux->codProducto << endl;
-                cout << "Kcal del producto: " << aux->kcal << endl;
-                cout << "Precio del producto: " << aux->precio << endl;
-                cout << "Cantidad: " << aux->cantidad << endl;
-                return aux;
+        while (aux != NULL) {
+            cout << aux->codPais << "a" << aux->codCiudad << "b" << aux->codRest << "c" << aux->codMenu << endl;
+            if (aux->codProducto == pCodProducto) {
+                if (aux->codPais == pCodPais && aux->codCiudad == pCodCiudad && aux->codRest == pCodRest && aux->codMenu == pCodMenu) {
+                    cout << "Encontrado" << endl;
+                    return aux;
+                }
             }
             aux = aux->siguiente;
         }
-        cout << "No se encontro el producto" << endl;
     }
     return aux;
 }
@@ -81,6 +75,7 @@ int ArbolProducto::getProducto(int pCodProducto, int pCodPais, int pCodCiudad, i
         }
         cout << "No se encontro el producto" << endl;
     }
+    return 0;
 }
 
 
@@ -114,7 +109,7 @@ void ArbolProducto::precio(int pCodPais, int pCodCiudad, int pCodRest, int pCodM
 
 
 
-bool ArbolProducto::existeProducto(int pCodPais, int pCodCiudad, int pCodRest, int pCodMenu, int pCodProducto, ArbolPais& lPais, ArbolCiudad& lCiudad, listaRest& lRest, ArbolMenu& lMenuRest) {
+bool ArbolProducto::existeProducto(int pCodPais, int pCodCiudad, int pCodRest, int pCodMenu, int pCodProducto) {
     NodoProducto* aux = primero;
     if (primero == NULL) {
         cout << "No hay elementos" << endl;
@@ -122,8 +117,10 @@ bool ArbolProducto::existeProducto(int pCodPais, int pCodCiudad, int pCodRest, i
     else {
         aux = primero;
         while (aux != NULL) {
+            cout << aux->codPais << "a" << aux->codCiudad << "b" << aux->codRest << "c" << aux->codMenu << endl;
             if (aux->codProducto == pCodProducto) {
                 if (aux->codPais == pCodPais && aux->codCiudad == pCodCiudad && aux->codRest == pCodRest && aux->codMenu == pCodMenu) {
+                    cout << "Encontrado" << endl;
                     return true;
                 }
             }
@@ -156,14 +153,14 @@ void ArbolProducto::reporteProducto(int pCodPais, int pCodCiudad, int pCodRest, 
     }
 }
 
-void ArbolProducto::insertarProducto(int codPais, int codCiudad, int codRest, int codMenu, int codProducto, string nombre, int kcal, int precio, int cant, ArbolPais& lPais, ArbolCiudad& lCiudad, listaRest& lRest, ArbolMenu& lMenuRest) {
+void ArbolProducto::insertarProducto(int codPais, int codCiudad, int codRest, int codMenu, int codProducto, string nombre, int kcal, int precio, int cant) {
     // if (lMenuRest.existe(codMenu, codPais, codCiudad, codRest)) {
 
     if (ArbolVacio()) {
         primero = new NodoProducto(codPais, codCiudad, codRest, codMenu, codProducto, nombre, kcal, precio, cant);
     }
     else {
-        if (existeProducto(codPais, codCiudad, codRest, codMenu, codProducto, lPais, lCiudad, lRest, lMenuRest)) {
+        if (existeProducto(codPais, codCiudad, codRest, codMenu, codProducto)) {
             cout << "Este producto ya existe en el menu, no se puede insertar" << endl;
         }
         else {
@@ -174,6 +171,7 @@ void ArbolProducto::insertarProducto(int codPais, int codCiudad, int codRest, in
             aux->siguiente = new NodoProducto(codPais, codCiudad, codRest, codMenu, codProducto, nombre, kcal, precio, cant);
             aux->siguiente->anterior = aux;
             cout << "Producto insertado" << endl;
+            cout << aux->siguiente->nombre << endl;
         }
     }
     // } else {
@@ -217,7 +215,7 @@ void ArbolProducto::cargarProductos(ArbolPais& lPaises, ArbolCiudad& lCiudades, 
         getline(ss, temp, ';');
         cant = stoi(temp);
 
-        insertarProducto(idP, idC, idR, idM, id, name, kcal, precio, cant, lPaises, lCiudades, lRest, lMenu);
+        insertarProducto(idP, idC, idR, idM, id, name, kcal, precio, cant);
     }
 
     archivo.close();
@@ -238,25 +236,27 @@ void ArbolProducto::mostrar() {
     }
 }
 
-void ArbolProducto::modificarProducto(int codPais, int codCiudad, int codRest, int codMenu, int codProducto, string nombre, int kcal, int precio, ArbolPais& lPaises, ArbolCiudad& lCiudades, listaRest& lRest, ArbolMenu& lMenu) {
+void ArbolProducto::modificarProducto(int codPais, int codCiudad, int codRest, int codMenu, int codProducto, string nombre, int kcal, int precio, int cant) {
     NodoProducto* aux = primero;
     if (primero == NULL) {
         cout << "No hay elementos" << endl;
     }
     else {
+        aux = primero;
         while (aux != NULL) {
-            // cout << aux->codMenu;
-            if (aux->codPais == codPais && aux->codCiudad == codCiudad && aux->codRest == codRest && aux->codMenu == codMenu) {
-                aux->nombre = nombre;
-                aux->kcal = kcal;
-                aux->precio = precio;
-                cout << "Producto modificado" << endl;
-                return;
+            if (aux->codProducto == codProducto) {
+                if (aux->codPais == codPais && aux->codCiudad == codCiudad && aux->codRest == codRest && aux->codMenu == codMenu) {
+                    cout << "Encontrado" << endl;
+                    aux->nombre = nombre;
+                    aux->precio = precio;
+                    aux->kcal = kcal;
+                    aux->cantidad = cant;
+                    return;
+                }
             }
             aux = aux->siguiente;
         }
     }
-    cout << "No se encontro el producto" << endl;
     return;
 }
 
@@ -317,6 +317,31 @@ void ArbolProducto::aumentarCompra(int pCodPais, int pCodCiudad, int pCodRest, i
                 }
             }
             aux = aux->siguiente;
+        }
+    }
+}
+
+void ArbolProducto::eliminar(int id, int idP, int idC, int idR, int idM) {
+    if (primero == NULL) {
+        cout << "No hay nada" << endl;
+    }
+    else {
+        if (id == primero->codMenu && primero->codPais == idP && primero->codCiudad == idC && primero->codRest == idR && primero->codMenu == idM) {
+            NodoProducto* temp = primero;
+            primero = primero->siguiente;
+            delete temp;
+            return;
+        }
+
+        NodoProducto* temp = primero;
+        while (temp->siguiente && temp->siguiente->codMenu != id && temp->siguiente->codPais != idP && temp->siguiente->codCiudad != idC && temp->siguiente->codRest != idR && temp->siguiente->codMenu != idM) {
+            temp = temp->siguiente;
+        }
+        if (temp->siguiente) {
+            NodoProducto* nodoEliminar = temp->siguiente;
+            temp->siguiente = nodoEliminar->siguiente;
+            delete nodoEliminar;
+            return;
         }
     }
 }
