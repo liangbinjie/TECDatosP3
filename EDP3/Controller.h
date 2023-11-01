@@ -9,6 +9,10 @@
 #include "Menu.h"
 #include "Productos.h"
 
+
+
+extern bool esCliente;
+
 // extern variables for Paises ----------------------------------------
 extern ArbolPais paises;
 extern bool boolInsertarPais;
