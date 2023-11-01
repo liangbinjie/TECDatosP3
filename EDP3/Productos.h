@@ -21,15 +21,16 @@ private:
     int codRest;
     int codMenu;
     int codProducto;
-    string nombre;
-    int kcal;
-    int precio;
-    int cantidad;
+
     int contador;
 
     friend class ArbolProducto;
 
 public:
+    string nombre;
+    int kcal;
+    int precio;
+    int cantidad;
     NodoProducto(int cp, int cc, int cr, int cm, int cpro, string nombre, int kc, int p, int cant);
     NodoProducto(int cp, int cc, int cr, int cm, int cpro, string nombre, int kc, int p, int cant, NodoProducto* sigNodo);
 };

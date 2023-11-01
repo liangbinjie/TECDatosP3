@@ -217,7 +217,7 @@ void ArbolProducto::cargarProductos(ArbolPais& lPaises, ArbolCiudad& lCiudades, 
         getline(ss, temp, ';');
         cant = stoi(temp);
 
-        ArbolProducto::insertarProducto(idP, idC, idR, idM, id, name, kcal, precio, cant, lPaises, lCiudades, lRest, lMenu);
+        insertarProducto(idP, idC, idR, idM, id, name, kcal, precio, cant, lPaises, lCiudades, lRest, lMenu);
     }
 
     archivo.close();

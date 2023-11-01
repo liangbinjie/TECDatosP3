@@ -143,6 +143,7 @@
     <ClCompile Include="Productos.cpp" />
     <ClCompile Include="Restaurantes.cpp" />
     <ClCompile Include="ventanaPrincipal.cpp" />
+    <ClCompile Include="ViewCliente.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Admins.h" />
@@ -181,6 +182,9 @@
     <ClInclude Include="ventanaPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ViewCliente.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FormAdmin.resx">
@@ -209,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ventanaPrincipal.resx">
       <DependentUpon>ventanaPrincipal.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCliente.resx">
+      <DependentUpon>ViewCliente.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
