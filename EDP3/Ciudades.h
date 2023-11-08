@@ -41,6 +41,7 @@ private:
 	NodoCiudad* modificarAux(NodoCiudad* r, int id, int idPais, string nombre);
 public:
 	ArbolCiudad();
+	void reporteCiudad(int idPais);
 	void insertarBalanceado(NodoCiudad*& r, int id, int idPais, string nombre, bool& Hh);
 	void insertar(int id, int idPais, string nombre, ArbolPais aPaises);
 	void RotacionDobleIzquierda(NodoCiudad*& n, NodoCiudad*& n1);

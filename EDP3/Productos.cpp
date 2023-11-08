@@ -153,6 +153,31 @@ void ArbolProducto::reporteProducto(int pCodPais, int pCodCiudad, int pCodRest, 
     }
 }
 
+
+void ArbolProducto::reporteProductoPrecio(int pCodPais, int pCodCiudad, int pCodRest, int pCodMenu, ArbolPais& lPaises, ArbolCiudad& lCiudades, listaRest& lRest, ArbolMenu& lMenu) {
+    NodoProducto* aux;
+    ofstream archivo;
+    archivo.open("reportes/ProductosPrecio.txt");
+    if (primero == NULL) {
+        cout << "No hay elementos" << endl;
+    }
+    else {
+        aux = primero;
+        while (aux) {
+            if (aux->codMenu == pCodMenu && aux->codPais == pCodPais && aux->codCiudad == pCodCiudad && aux->codRest == pCodRest) {
+                archivo << aux->codProducto << "  " << aux->nombre << "  " << aux->precio << endl;
+
+            }
+
+
+            aux = aux->siguiente;
+        }
+        archivo.close();
+        return;
+    }
+}
+
+
 void ArbolProducto::insertarProducto(int codPais, int codCiudad, int codRest, int codMenu, int codProducto, string nombre, int kcal, int precio, int cant) {
     // if (lMenuRest.existe(codMenu, codPais, codCiudad, codRest)) {
 

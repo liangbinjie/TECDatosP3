@@ -135,6 +135,8 @@
     <ClCompile Include="FormMenu.cpp" />
     <ClCompile Include="FormPaises.cpp" />
     <ClCompile Include="FormProducto.cpp" />
+    <ClCompile Include="FormRepoCiudad.cpp" />
+    <ClCompile Include="FormRepoProduPrecio.cpp" />
     <ClCompile Include="FormRestaurante.cpp" />
     <ClCompile Include="ListaRest.cpp" />
     <ClCompile Include="LoginForm.cpp" />
@@ -165,6 +167,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FormProducto.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormRepoCiudad.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormRepoProduPrecio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FormRestaurante.h">
@@ -204,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProducto.resx">
       <DependentUpon>FormProducto.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRepoCiudad.resx">
+      <DependentUpon>FormRepoCiudad.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRestaurante.resx">
       <DependentUpon>FormRestaurante.h</DependentUpon>

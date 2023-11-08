@@ -303,6 +303,10 @@ void ArbolCiudad::modificar(int id, string nombre, int idPais, ArbolPais& aPaise
     }
 }
 
+
+
+
+
 void ArbolCiudad::insertarReporte(int id, int idPais, string nombre, ArbolPais& aPaises) {
     //cout << "www" << nombre<< endl;
     if (aPaises.existePais(idPais)) {
@@ -344,6 +348,18 @@ void ArbolCiudad::resetearReportes1() {
     resetearReportes2(raiz);
     raiz = NULL;
 }
+
+//void ArbolCiudad::reporteCiudad(int idPais) {
+//    reporteCiudad(idPais, ArbolPais & aPaises, ArbolCiudad & reporteCiudad);
+
+//}
+
+
+
+
+
+
+
 
 
 void ArbolCiudad::reporteCiudad(int idPais, ArbolPais& aPaises, ArbolCiudad& reporteCiudad) {
@@ -394,6 +410,32 @@ void ArbolCiudad::escArchivo2(NodoCiudad* r) {
         return;
     }
     else {
+        ofstream archivo;
+        archivo.open("reportes/Ciudades.txt"); // Abre el archivo en modo "write" (sobrescribe)
+        if (archivo.is_open()) {
+            archivo << "Ciudades del país " << r->idPais << endl;
+            archivo << endl;
+            archivo << r->nombre << " - " << endl;
+            archivo.close();
+        }
+        else {
+            cout << "Error al abrir el archivo." << endl;
+        }
+        preorden(r->izq);
+        preorden(r->der);
+    }
+
+
+
+
+
+
+    /*
+
+    if (r == NULL) {
+        return;
+    }
+    else {
 
         ofstream archivo;
         archivo.open("reportes/Ciudades.txt");
@@ -405,6 +447,7 @@ void ArbolCiudad::escArchivo2(NodoCiudad* r) {
         preorden(r->izq);
         preorden(r->der);
     }
+    */
 }
 
 void ArbolCiudad::escArchivo1() {
