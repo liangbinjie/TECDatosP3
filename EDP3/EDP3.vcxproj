@@ -130,6 +130,7 @@
     <ClCompile Include="Ciudades.cpp" />
     <ClCompile Include="Compra.cpp" />
     <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="Facturas.cpp" />
     <ClCompile Include="FormAdmin.cpp" />
     <ClCompile Include="FormCiudades.cpp" />
     <ClCompile Include="FormClientes.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="Admins.h" />
     <ClInclude Include="Ciudades.h" />
     <ClInclude Include="Controller.h" />
+    <ClInclude Include="Facturas.h" />
     <ClInclude Include="FormAdmin.h">
       <FileType>CppForm</FileType>
     </ClInclude>

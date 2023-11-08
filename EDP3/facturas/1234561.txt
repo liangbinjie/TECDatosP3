@@ -1,0 +1,7 @@
+Cliente: 123456
+Para llevar
+Pago con efectivo
+4xFries=9200
+2xBigMac=4600
+
+Total: 13252
