@@ -211,7 +211,7 @@ namespace EDP3 {
 
 		if (productos.existeProducto(idP, idC, idR, idM, id)) {
 			//NodoProducto* aux = productos.buscarProducto(idP, idC, idR, idM, id);
-			reporteProductoPrecio(idP, idC, idR, idM, ArbolPais & lPaises, ArbolCiudad & lCiudades, listaRest & lRest, ArbolMenu & lMenu);
+			productos.reporteProductoPrecio(idP, idC, idR, idM, paises, ciudades, restaurantes, menu);
 		}
 		else {
 			MessageBox::Show("Este producto no existe");

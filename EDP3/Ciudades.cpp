@@ -220,7 +220,6 @@ NodoCiudad* ArbolCiudad::existeAuxCiudad(NodoCiudad* r, int id, int idPais) {
     else if (id > r->id) {
         return existeAuxCiudad(r->der, id, idPais);
     }
-    /*
     else {
         if (idPais < r->idPais) {
             return existeAuxCiudad(r->izq, id, idPais);
@@ -229,7 +228,6 @@ NodoCiudad* ArbolCiudad::existeAuxCiudad(NodoCiudad* r, int id, int idPais) {
             return existeAuxCiudad(r->der, id, idPais);
         }
     }
-    */
 }
 
 

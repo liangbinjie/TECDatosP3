@@ -370,3 +370,17 @@ void ArbolProducto::eliminar(int id, int idP, int idC, int idR, int idM) {
         }
     }
 }
+
+
+string ArbolProducto::verProductos(int idP, int idC, int idR, int idM) {
+    pNodoProducto aux = primero;
+    string out = "";
+    while (aux) {
+        if (aux->codPais == idP && aux->codMenu == idM && aux->codCiudad == idC && aux->codRest == idR) {
+            out += to_string(aux->codProducto) + ". " + aux->nombre + "\r\n";
+        }
+        aux = aux->siguiente;
+
+    }
+    return out;
+}

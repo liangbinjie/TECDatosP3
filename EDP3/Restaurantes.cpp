@@ -35,24 +35,25 @@ void ArbolRestaurante::postOrden(pnodoRest nodo) {
 
 
 
-
-void ArbolRestaurante::reporte() {
+/*
+void ArbolRestaurante::reporte(int idP, int idC) {
     ofstream archivo;
-    archivo.open("reportes/precioProducto.txt");
-    reporte(raiz, archivo);
+    archivo.open("reportes/listaRestaurantes.txt");
+    reporte(raiz, idP, idC, archivo);
     archivo.close();
 }
 
-void ArbolRestaurante::reporte(NodoPais* r, ofstream& archivo) {
-    if (r == NULL) {
+void ArbolRestaurante::reporte(pnodoRest nodo, int idPais, int idCiudad, ofstream& archivo) {
+    if (nodo == NULL) {
         return;
     }
     else {
-        archivo << "ID: " << r->id << " | Nombre: " << r->nombre << endl;
-        reporte(r->izq, archivo);
-        reporte(r->der, archivo);
+        archivo << "ID: " << nodo->valor << " | Nombre: " << nodo->nombre << endl;
+        reporte(nodo->Hizq, idPais, idCiudad, archivo);
+        reporte(nodo->Hder, idPais, idCiudad, archivo);
     }
 }
+*/
 
 
 

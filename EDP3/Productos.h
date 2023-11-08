@@ -44,6 +44,7 @@ private:
 public:
     ArbolProducto();
     // ListaProducto()
+    string verProductos(int idP, int idC, int idR, int idM);
 
     bool ArbolVacio();
     void insertarProducto(int codPais, int codCiudad, int codRest, int codMenu, int codProducto, string nombre, int kcal, int precio, int cant);
