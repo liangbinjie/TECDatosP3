@@ -13,12 +13,12 @@ namespace EDP3 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for FormRepoProduPrecio
+	/// Summary for FormRepoProduCant
 	/// </summary>
-	public ref class FormRepoProduPrecio : public System::Windows::Forms::Form
+	public ref class FormRepoProduCant : public System::Windows::Forms::Form
 	{
 	public:
-		FormRepoProduPrecio(void)
+		FormRepoProduCant(void)
 		{
 			InitializeComponent();
 			//
@@ -30,15 +30,16 @@ namespace EDP3 {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~FormRepoProduPrecio()
+		~FormRepoProduCant()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ productid;
+	private: System::Windows::Forms::Button^ searchBtn;
 	protected:
+	private: System::Windows::Forms::TextBox^ productid;
 	private: System::Windows::Forms::TextBox^ menuid;
 	private: System::Windows::Forms::TextBox^ restid;
 	private: System::Windows::Forms::TextBox^ ciudadid;
@@ -48,7 +49,6 @@ namespace EDP3 {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Button^ searchBtn;
 
 	private:
 		/// <summary>
@@ -63,6 +63,7 @@ namespace EDP3 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->searchBtn = (gcnew System::Windows::Forms::Button());
 			this->productid = (gcnew System::Windows::Forms::TextBox());
 			this->menuid = (gcnew System::Windows::Forms::TextBox());
 			this->restid = (gcnew System::Windows::Forms::TextBox());
@@ -73,125 +74,114 @@ namespace EDP3 {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->searchBtn = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
+			// 
+			// searchBtn
+			// 
+			this->searchBtn->Location = System::Drawing::Point(374, 507);
+			this->searchBtn->Margin = System::Windows::Forms::Padding(2);
+			this->searchBtn->Name = L"searchBtn";
+			this->searchBtn->Size = System::Drawing::Size(118, 53);
+			this->searchBtn->TabIndex = 35;
+			this->searchBtn->Text = L"Generar";
+			this->searchBtn->UseVisualStyleBackColor = true;
+			this->searchBtn->Click += gcnew System::EventHandler(this, &FormRepoProduCant::searchBtn_Click);
 			// 
 			// productid
 			// 
-			this->productid->Location = System::Drawing::Point(361, 444);
+			this->productid->Location = System::Drawing::Point(306, 450);
 			this->productid->Margin = System::Windows::Forms::Padding(2);
 			this->productid->Name = L"productid";
 			this->productid->Size = System::Drawing::Size(295, 26);
-			this->productid->TabIndex = 23;
-			this->productid->TextChanged += gcnew System::EventHandler(this, &FormRepoProduPrecio::productid_TextChanged);
+			this->productid->TabIndex = 34;
 			// 
 			// menuid
 			// 
-			this->menuid->Location = System::Drawing::Point(361, 340);
+			this->menuid->Location = System::Drawing::Point(306, 346);
 			this->menuid->Margin = System::Windows::Forms::Padding(2);
 			this->menuid->Name = L"menuid";
 			this->menuid->Size = System::Drawing::Size(295, 26);
-			this->menuid->TabIndex = 22;
-			this->menuid->TextChanged += gcnew System::EventHandler(this, &FormRepoProduPrecio::menuid_TextChanged);
+			this->menuid->TabIndex = 33;
 			// 
 			// restid
 			// 
-			this->restid->Location = System::Drawing::Point(361, 239);
+			this->restid->Location = System::Drawing::Point(306, 245);
 			this->restid->Margin = System::Windows::Forms::Padding(2);
 			this->restid->Name = L"restid";
 			this->restid->Size = System::Drawing::Size(295, 26);
-			this->restid->TabIndex = 21;
-			this->restid->TextChanged += gcnew System::EventHandler(this, &FormRepoProduPrecio::restid_TextChanged);
+			this->restid->TabIndex = 32;
 			// 
 			// ciudadid
 			// 
-			this->ciudadid->Location = System::Drawing::Point(361, 158);
+			this->ciudadid->Location = System::Drawing::Point(306, 164);
 			this->ciudadid->Margin = System::Windows::Forms::Padding(2);
 			this->ciudadid->Name = L"ciudadid";
 			this->ciudadid->Size = System::Drawing::Size(295, 26);
-			this->ciudadid->TabIndex = 20;
-			this->ciudadid->TextChanged += gcnew System::EventHandler(this, &FormRepoProduPrecio::ciudadid_TextChanged);
+			this->ciudadid->TabIndex = 31;
 			// 
 			// paisid
 			// 
-			this->paisid->Location = System::Drawing::Point(361, 58);
+			this->paisid->Location = System::Drawing::Point(306, 64);
 			this->paisid->Margin = System::Windows::Forms::Padding(2);
 			this->paisid->Name = L"paisid";
 			this->paisid->Size = System::Drawing::Size(295, 26);
-			this->paisid->TabIndex = 19;
-			this->paisid->TextChanged += gcnew System::EventHandler(this, &FormRepoProduPrecio::paisid_TextChanged);
+			this->paisid->TabIndex = 30;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(358, 402);
+			this->label5->Location = System::Drawing::Point(303, 408);
 			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(85, 20);
-			this->label5->TabIndex = 18;
+			this->label5->TabIndex = 29;
 			this->label5->Text = L"Product ID";
-			this->label5->Click += gcnew System::EventHandler(this, &FormRepoProduPrecio::label5_Click);
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(358, 304);
+			this->label4->Location = System::Drawing::Point(303, 310);
 			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(70, 20);
-			this->label4->TabIndex = 17;
+			this->label4->TabIndex = 28;
 			this->label4->Text = L"Menu ID";
-			this->label4->Click += gcnew System::EventHandler(this, &FormRepoProduPrecio::label4_Click);
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(358, 205);
+			this->label3->Location = System::Drawing::Point(303, 211);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(110, 20);
-			this->label3->TabIndex = 16;
+			this->label3->TabIndex = 27;
 			this->label3->Text = L"Restaurant ID";
-			this->label3->Click += gcnew System::EventHandler(this, &FormRepoProduPrecio::label3_Click);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(358, 112);
+			this->label2->Location = System::Drawing::Point(303, 118);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(56, 20);
-			this->label2->TabIndex = 15;
+			this->label2->TabIndex = 26;
 			this->label2->Text = L"City ID";
-			this->label2->Click += gcnew System::EventHandler(this, &FormRepoProduPrecio::label2_Click);
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(358, 18);
+			this->label1->Location = System::Drawing::Point(303, 24);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(85, 20);
-			this->label1->TabIndex = 14;
+			this->label1->TabIndex = 25;
 			this->label1->Text = L"Country ID";
-			this->label1->Click += gcnew System::EventHandler(this, &FormRepoProduPrecio::label1_Click);
 			// 
-			// searchBtn
-			// 
-			this->searchBtn->Location = System::Drawing::Point(429, 501);
-			this->searchBtn->Margin = System::Windows::Forms::Padding(2);
-			this->searchBtn->Name = L"searchBtn";
-			this->searchBtn->Size = System::Drawing::Size(118, 53);
-			this->searchBtn->TabIndex = 24;
-			this->searchBtn->Text = L"Generar";
-			this->searchBtn->UseVisualStyleBackColor = true;
-			this->searchBtn->Click += gcnew System::EventHandler(this, &FormRepoProduPrecio::searchBtn_Click);
-			// 
-			// FormRepoProduPrecio
+			// FormRepoProduCant
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1016, 614);
+			this->ClientSize = System::Drawing::Size(904, 585);
 			this->Controls->Add(this->searchBtn);
 			this->Controls->Add(this->productid);
 			this->Controls->Add(this->menuid);
@@ -203,9 +193,9 @@ namespace EDP3 {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Name = L"FormRepoProduPrecio";
-			this->Text = L"FormRepoProduPrecio";
-			this->Load += gcnew System::EventHandler(this, &FormRepoProduPrecio::FormRepoProduPrecio_Load);
+			this->Name = L"FormRepoProduCant";
+			this->Text = L"FormRepoProduCant";
+			this->Load += gcnew System::EventHandler(this, &FormRepoProduCant::FormRepoProduCant_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -221,36 +211,16 @@ namespace EDP3 {
 
 		if (productos.existeProducto(idP, idC, idR, idM, id)) {
 			//NodoProducto* aux = productos.buscarProducto(idP, idC, idR, idM, id);
-			productos.reporteProductoPrecio(idP, idC, idR, idM, paises, ciudades, restaurantes, menu);
+			productos.reporteProductoCantidad(idP, idC, idR, idM, paises, ciudades, restaurantes, menu);
 			MessageBox::Show("Reporte generado");
 		}
 		else {
 			MessageBox::Show("Este producto no existe");
 
 		}
-	
+
 	}
-private: System::Void FormRepoProduPrecio_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void productid_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void menuid_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void restid_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void ciudadid_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void paisid_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void FormRepoProduCant_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

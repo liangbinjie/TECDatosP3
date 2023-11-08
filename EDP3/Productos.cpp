@@ -154,6 +154,31 @@ void ArbolProducto::reporteProducto(int pCodPais, int pCodCiudad, int pCodRest, 
 }
 
 
+void ArbolProducto::reporteProductoCantidad(int pCodPais, int pCodCiudad, int pCodRest, int pCodMenu, ArbolPais& lPaises, ArbolCiudad& lCiudades, listaRest& lRest, ArbolMenu& lMenu) {
+    NodoProducto* aux;
+    ofstream archivo;
+    archivo.open("reportes/ProductosCantidad.txt");
+    if (primero == NULL) {
+        cout << "No hay elementos" << endl;
+    }
+    else {
+        aux = primero;
+        while (aux) {
+            if (aux->codMenu == pCodMenu && aux->codPais == pCodPais && aux->codCiudad == pCodCiudad && aux->codRest == pCodRest) {
+                archivo << aux->codProducto << "  " << aux->nombre << "  " << aux->cantidad << endl;
+
+            }
+
+
+            aux = aux->siguiente;
+        }
+        archivo.close();
+        return;
+    }
+}
+
+
+
 void ArbolProducto::reporteProductoPrecio(int pCodPais, int pCodCiudad, int pCodRest, int pCodMenu, ArbolPais& lPaises, ArbolCiudad& lCiudades, listaRest& lRest, ArbolMenu& lMenu) {
     NodoProducto* aux;
     ofstream archivo;
