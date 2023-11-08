@@ -6,8 +6,8 @@ using namespace std;
 
 class nodoCompra {
 public:
-	nodoCompra(int id, int idP, int idC, int idR, int idM, string compra, int cliente, double precio);
-	int id;
+	nodoCompra(string id, int idP, int idC, int idR, int idM, string compra, int cliente, double precio);
+	string id;
 	int cliente;
 	int idP;
 	int idC;
@@ -23,9 +23,9 @@ private:
 	nodoCompra* primero;
 public:
 	listaCompra();
-	void agregar(int id, int idP, int idC, int idR, int idM, string compra, int cliente, int precio);
+	void agregar(string id, int idP, int idC, int idR, int idM, string compra, int cliente, int precio);
 	void eliminar(int id);
-	int cont(int cliente);
+	int cont();
 };
 
 #endif

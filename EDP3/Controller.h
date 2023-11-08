@@ -8,6 +8,9 @@
 #include "Restaurantes.h"
 #include "Menu.h"
 #include "Productos.h"
+#include "Compra.h"
+
+extern listaCompra compras;
 
 
 extern int cedulaCliente;

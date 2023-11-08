@@ -1,7 +1,7 @@
 #include "Compra.h"
 
 
-nodoCompra::nodoCompra(int id, int idP, int idC, int idR, int idM, string compra, int cliente, double precio) {
+nodoCompra::nodoCompra(string id, int idP, int idC, int idR, int idM, string compra, int cliente, double precio) {
 	this->id = id;
 	this->cliente = cliente;
 	this->idP = idP;
@@ -17,7 +17,7 @@ listaCompra::listaCompra() {
 	primero = NULL;
 }
 
-int listaCompra::cont(int cliente) {
+int listaCompra::cont() {
 	nodoCompra* aux = primero;
 	int contador = 0;
 	while (aux) {
@@ -28,8 +28,19 @@ int listaCompra::cont(int cliente) {
 	return contador;
 }
 
-void listaCompra::agregar(int id, int idP, int idC, int idR, int idM, string compra, int cliente, int precio) {
-	
+void listaCompra::agregar(string id, int idP, int idC, int idR, int idM, string compra, int cliente, int precio) {
+
+	if (primero == NULL) {
+		primero = new nodoCompra(id, idP, idC, idR, idM, compra, cliente, precio);
+	}
+	else {
+		nodoCompra* aux = primero;
+		while (aux->siguiente != NULL) {
+			aux = aux->siguiente;
+		}
+		aux->siguiente = new nodoCompra(id, idP, idC, idR, idM, compra, cliente, precio);
+	}
+
 }
 
 void listaCompra::eliminar(int id) {
