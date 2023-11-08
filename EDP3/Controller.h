@@ -10,7 +10,7 @@
 #include "Productos.h"
 
 
-
+extern int cedulaCliente;
 extern bool esCliente;
 
 // extern variables for Paises ----------------------------------------
