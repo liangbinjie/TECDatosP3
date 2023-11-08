@@ -197,6 +197,7 @@ void ArbolPais::reporte(NodoPais* r, ofstream& archivo) {
 }
 
 NodoPais* ArbolPais::eliminarAux(NodoPais* r, int id) {
+	std::ofstream outfile;
 	if (r == NULL) {
 		return r;
 	}
@@ -211,11 +212,17 @@ NodoPais* ArbolPais::eliminarAux(NodoPais* r, int id) {
 		// Nodo con un solo hijo o sin hijos
 		if (r->izq == NULL) {
 			NodoPais* temp = r->der;
+			outfile.open("reportes/paisesEliminados.txt", std::ios_base::app); // append instead of overwrite
+			outfile << r->nombre << endl;;
 			delete r;
 			return temp;
 		}
 		else if (r->der == NULL) {
 			NodoPais* temp = r->izq;
+
+
+			outfile.open("reportes/paisesEliminados.txt", std::ios_base::app); // append instead of overwrite
+			outfile << r->nombre << endl;
 			delete r;
 			return temp;
 		}
