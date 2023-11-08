@@ -57,6 +57,7 @@ extern bool boolEliminarProducto;
 
 // extern variables for clientes ----------------------------------------
 extern listaAdmins clientes;
+extern arbolAdmins arbolClientes;
 extern bool boolInsertarCliente;
 extern bool boolBuscarCliente;
 extern bool boolModificarCliente;

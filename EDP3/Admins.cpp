@@ -1,5 +1,6 @@
 #include "Admins.h"
 
+
 nodoB::nodoB(int t1, bool leaf1)
 {
     // Copy the given minimum degree and leaf property
@@ -323,6 +324,16 @@ void listaAdmins::cargarClientes() {
         getline(ss, name, ';');
 
         insertar(cedula, name);
+    }
+    archivo.close();
+}
+
+void listaAdmins::reporteCliente() {
+    ofstream archivo("reportes/listaClientes.txt");
+    pnodo aux = raiz;
+    while (aux) {
+        archivo << "Cedula: " << aux->cedula << " | Nombre: " << aux->nombre << endl;
+        aux = aux->siguiente;
     }
     archivo.close();
 }

@@ -366,7 +366,6 @@ void ArbolCiudad::preordenReporte2(NodoCiudad* r, int idPais, ArbolPais& aPaises
             //cout <<"paos"<<endl;
             reporteCiudad.insertarReporte(r->id, r->idPais, r->nombre, aPaises);
         }
-        //cout << r->id << "  " << r->idPais << "  " << idPais<<endl;
         preordenReporte2(r->izq, idPais, aPaises, reporteCiudad);
         preordenReporte2(r->der, idPais, aPaises, reporteCiudad);
     }
@@ -480,10 +479,10 @@ NodoCiudad* ArbolCiudad::eliminarNodo(NodoCiudad* raiz, int id, int idPais) {
         return raiz;
     }
 
-    if (id < raiz->id || (id == raiz->id && idPais < raiz->idPais)) {
+    if (id <= raiz->id) {
         raiz->izq = eliminarNodo(raiz->izq, id, idPais);
     }
-    else if (id > raiz->id || (id == raiz->id && idPais > raiz->idPais)) {
+    else if (id > raiz->id) {
         raiz->der = eliminarNodo(raiz->der, id, idPais);
     }
     else {

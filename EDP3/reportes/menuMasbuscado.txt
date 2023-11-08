@@ -1,0 +1,7 @@
+MENU MAS BUSCADO
+ID: 1
+Nombre: HC
+Busquedas: 5
+Restaurante: 34
+Ciudad: 345
+Pais: 123

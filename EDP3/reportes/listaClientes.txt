@@ -1,0 +1,14 @@
+Cedula: 123456 | Nombre: Maria Campos
+Cedula: 6578 | Nombre: Pedro Perez
+Cedula: 40193 | Nombre: Jose Torres
+Cedula: 1 | Nombre: 1
+Cedula: 2 | Nombre: dos
+Cedula: 3 | Nombre: qwe
+Cedula: 4 | Nombre: poi
+Cedula: 5 | Nombre: luk
+Cedula: 6 | Nombre: lwi
+Cedula: 10001 | Nombre: Alice
+Cedula: 24567 | Nombre: Bob
+Cedula: 39842 | Nombre: Charlie
+Cedula: 50123 | Nombre: David
+Cedula: 67890 | Nombre: Eve

@@ -6,33 +6,6 @@
 #include <sstream>
 using namespace std;
 
-class nodo {
-private:
-    int cedula;
-    string nombre;
-    nodo* siguiente;
-    friend class listaAdmins;
-public:
-    nodo(int cedula, string nombre);
-};
-
-typedef nodo* pnodo;
-
-class listaAdmins {
-private:
-    pnodo raiz;
-public:
-    listaAdmins();
-    void insertar(int cedula, string nombre);
-    void eliminar(int cedula);
-    void modificar(int cedula, string nombreNuevo);
-    string buscar(int cedula);
-    bool existe(int cedula);
-    void mostrar();
-    void cargarAdmins();
-    void cargarClientes();
-};
-
 class nodoB {
     int* keys;  // An array of keys
     int t;      // Minimum degree (defines the range for number of keys)
@@ -87,5 +60,35 @@ public:
     // The main function that inserts a new key in this B-Tree
     void insert(int k);
 };
+
+class nodo {
+private:
+    int cedula;
+    string nombre;
+    nodo* siguiente;
+    friend class listaAdmins;
+public:
+    nodo(int cedula, string nombre);
+};
+
+typedef nodo* pnodo;
+
+class listaAdmins {
+private:
+    pnodo raiz;
+public:
+    listaAdmins();
+    void insertar(int cedula, string nombre);
+    void eliminar(int cedula);
+    void modificar(int cedula, string nombreNuevo);
+    string buscar(int cedula);
+    bool existe(int cedula);
+    void mostrar();
+    void cargarAdmins();
+    void cargarClientes();
+    void reporteCliente();
+};
+
+
 
 #endif
