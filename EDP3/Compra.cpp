@@ -19,7 +19,7 @@ listaCompra::listaCompra() {
 
 int listaCompra::cont() {
 	nodoCompra* aux = primero;
-	int contador = 0;
+	int contador = 1;
 	while (aux) {
 		contador++;
 		aux = aux->siguiente;
@@ -28,7 +28,7 @@ int listaCompra::cont() {
 	return contador;
 }
 
-void listaCompra::agregar(string id, int idP, int idC, int idR, int idM, string compra, int cliente, int precio) {
+void listaCompra::agregar(string id, int idP, int idC, int idR, int idM, string compra, int cliente, double precio) {
 
 	if (primero == NULL) {
 		primero = new nodoCompra(id, idP, idC, idR, idM, compra, cliente, precio);

@@ -7,12 +7,13 @@
 using namespace std;
 
 class nodoFactura {
-	nodoFactura(string id, int cliente, string compra, int precio);
+	nodoFactura(string id, int cliente, string compra, double precio);
 	string id;
 	int cliente;
 	string compra;
-	int precio;
+	double precio;
 	nodoFactura* siguiente;
+	friend class listaFactura;
 };
 
 class listaFactura {
@@ -20,7 +21,9 @@ private:
 	nodoFactura* primero;
 public:
 	listaFactura();
-	void agregar(string id, int cliente, string compra, int precio);
+	void agregar(string id, int cliente, string compra, double precio);
+	void reporteMasAlto();
+	void reporteMenosAlto();
 };
 
 #endif

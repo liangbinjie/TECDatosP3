@@ -23,7 +23,7 @@ private:
 	nodoCompra* primero;
 public:
 	listaCompra();
-	void agregar(string id, int idP, int idC, int idR, int idM, string compra, int cliente, int precio);
+	void agregar(string id, int idP, int idC, int idR, int idM, string compra, int cliente, double precio);
 	void eliminar(int id);
 	int cont();
 };
