@@ -79,6 +79,8 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Facturas.cpp">
+          <Filter>Archivos de origen</Filter>
+    </ClCompile>
     <ClCompile Include="FormRepoProduCant.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -151,6 +153,8 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Facturas.h">
+          <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
     <ClInclude Include="FormRepoProduCant.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
