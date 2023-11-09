@@ -134,6 +134,7 @@
     <ClCompile Include="FormAdmin.cpp" />
     <ClCompile Include="FormCiudades.cpp" />
     <ClCompile Include="FormClientes.cpp" />
+    <ClCompile Include="FormCompra.cpp" />
     <ClCompile Include="FormMenu.cpp" />
     <ClCompile Include="FormPaises.cpp" />
     <ClCompile Include="FormProducto.cpp" />
@@ -162,6 +163,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FormClientes.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormCompra.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FormMenu.h">
@@ -211,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCompra.resx">
+      <DependentUpon>FormCompra.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.h</DependentUpon>

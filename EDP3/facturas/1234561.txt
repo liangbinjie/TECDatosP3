@@ -1,6 +1,0 @@
-Cliente: 123456
-Para llevar
-Pago con efectivo
-2xBigMac=4600
-
-Total: 4417.38

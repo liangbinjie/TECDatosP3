@@ -1,0 +1,5 @@
+1234562
+Cliente: 123456
+Compra: 
+2xBigMac=4600
+Total: 4462

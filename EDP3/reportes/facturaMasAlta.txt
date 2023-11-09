@@ -1,0 +1,5 @@
+1234562
+Cliente: 123456
+Compra: 
+45xFries=103500
+Total: 100395

@@ -24,8 +24,10 @@ private:
 public:
 	listaCompra();
 	void agregar(string id, int idP, int idC, int idR, int idM, string compra, int cliente, double precio);
-	void eliminar(int id);
+	void eliminar(string id);
 	int cont();
+	string buscar(string id);
+	bool existe(string id);
 };
 
 #endif

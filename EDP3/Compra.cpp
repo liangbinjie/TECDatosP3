@@ -1,5 +1,5 @@
 #include "Compra.h"
-
+using namespace std;
 
 nodoCompra::nodoCompra(string id, int idP, int idC, int idR, int idM, string compra, int cliente, double precio) {
 	this->id = id;
@@ -19,7 +19,7 @@ listaCompra::listaCompra() {
 
 int listaCompra::cont() {
 	nodoCompra* aux = primero;
-	int contador = 1;
+	int contador = 0;
 	while (aux) {
 		contador++;
 		aux = aux->siguiente;
@@ -43,7 +43,48 @@ void listaCompra::agregar(string id, int idP, int idC, int idR, int idM, string 
 
 }
 
-void listaCompra::eliminar(int id) {
-
+bool listaCompra::existe(string id) {
+	nodoCompra* aux = primero;
+	while (aux) {
+		if (aux->id == id) {
+			return true;
+		}
+		aux = aux->siguiente;
+	}
+	return false;
 }
 
+void listaCompra::eliminar(string id) {
+	if (primero->id == id) {
+		nodoCompra* temp = primero;
+		primero = primero->siguiente;
+		delete primero;
+		return;
+	}
+	else {
+		nodoCompra* aux = primero;
+		while (aux->siguiente && aux->siguiente->id != id) {
+			aux = aux->siguiente;
+		}
+		if (aux->siguiente) {
+			nodoCompra* temp = aux->siguiente;
+			aux->siguiente = temp->siguiente;
+			delete temp;
+			return;
+		}
+	}
+}
+
+
+string listaCompra::buscar(string id) {
+	nodoCompra* aux = primero;
+	string out = "";
+	while (aux) {
+		if (aux->id == id) {
+			out += aux->compra;
+			return out;
+		}
+		aux = aux->siguiente;
+	}
+	return "";
+}
