@@ -154,6 +154,31 @@ void ArbolProducto::reporteProducto(int pCodPais, int pCodCiudad, int pCodRest, 
 }
 
 
+void ArbolProducto::reporteProductoCantidad(int pCodPais, int pCodCiudad, int pCodRest, int pCodMenu, ArbolPais& lPaises, ArbolCiudad& lCiudades, listaRest& lRest, ArbolMenu& lMenu) {
+    NodoProducto* aux;
+    ofstream archivo;
+    archivo.open("reportes/ProductosCantidad.txt");
+    if (primero == NULL) {
+        cout << "No hay elementos" << endl;
+    }
+    else {
+        aux = primero;
+        while (aux) {
+            if (aux->codMenu == pCodMenu && aux->codPais == pCodPais && aux->codCiudad == pCodCiudad && aux->codRest == pCodRest) {
+                archivo << aux->codProducto << "  " << aux->nombre << "  " << aux->cantidad << endl;
+
+            }
+
+
+            aux = aux->siguiente;
+        }
+        archivo.close();
+        return;
+    }
+}
+
+
+
 void ArbolProducto::reporteProductoPrecio(int pCodPais, int pCodCiudad, int pCodRest, int pCodMenu, ArbolPais& lPaises, ArbolCiudad& lCiudades, listaRest& lRest, ArbolMenu& lMenu) {
     NodoProducto* aux;
     ofstream archivo;
@@ -354,7 +379,11 @@ void ArbolProducto::eliminar(int id, int idP, int idC, int idR, int idM) {
         if (id == primero->codMenu && primero->codPais == idP && primero->codCiudad == idC && primero->codRest == idR && primero->codMenu == idM) {
             NodoProducto* temp = primero;
             primero = primero->siguiente;
-            delete temp;
+            //ofstream archivo;
+           // archivo.open("reportes/ProductosEliminados.txt", ios::app); // Abre el archivo en modo "append"
+           // archivo << "Pais " << temp->codPais << "   " << "Ciudad " << temp->codCiudad << "   " << "Restaurante " << temp->codRest << "   " << "Menu " << temp->codMenu << "   " << "ID producto " << temp->codProducto << "   " << "Nombre " << temp->nombre << endl;
+           // archivo.close();
+          delete temp;
             return;
         }
 
@@ -365,6 +394,10 @@ void ArbolProducto::eliminar(int id, int idP, int idC, int idR, int idM) {
         if (temp->siguiente) {
             NodoProducto* nodoEliminar = temp->siguiente;
             temp->siguiente = nodoEliminar->siguiente;
+            ofstream archivo;
+            archivo.open("reportes/ProductosEliminados.txt", ios::app); // Abre el archivo en modo "append"
+            archivo << "Pais " << temp->codPais << "   " << "Ciudad " << temp->codCiudad << "   " << "Restaurante " << temp->codRest << "   " << "Menu " << temp->codMenu << "   " << "ID producto " << temp->codProducto << "   " << "Nombre " << temp->nombre << endl;
+            archivo.close();
             delete nodoEliminar;
             return;
         }

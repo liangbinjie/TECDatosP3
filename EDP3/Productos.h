@@ -61,6 +61,7 @@ public:
     int getProducto(int id, int idP, int idC, int idR, int idM);
     void eliminar(int id, int idP, int idC, int idR, int idM);
     void reporteProductoPrecio(int pCodPais, int pCodCiudad, int pCodRest, int pCodMenu, ArbolPais& lPaises, ArbolCiudad& lCiudades, listaRest& lRest, ArbolMenu& lMenu);
+    void reporteProductoCantidad(int pCodPais, int pCodCiudad, int pCodRest, int pCodMenu, ArbolPais& lPaises, ArbolCiudad& lCiudades, listaRest& lRest, ArbolMenu& lMenu);
 };
 
 
