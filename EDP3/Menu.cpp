@@ -259,6 +259,11 @@ NodoMenu* ArbolMenu::eliminarRec(NodoMenu* nodo, int clave, int idPais, int idCi
     }
     else {
         if (idPais == nodo->idPais && idCiudad == nodo->idCiudad && idRest == nodo->idRest) {
+            ofstream archivo;
+            archivo.open("reportes/MenusEliminados.txt", ios::app); // Abre el archivo en modo "append"
+            archivo << "Pais " << nodo->idPais << "   " << "Ciudad " << nodo->idCiudad << "   " << "Restaurante " << nodo->idRest << "   " << "ID menu " << nodo->clave << "   " << "Nombre " << nodo->nombre << endl;
+            archivo.close();
+
             if (nodo->izquierda == nullptr && nodo->derecha == nullptr) {
                 delete nodo;
                 return nullptr;
